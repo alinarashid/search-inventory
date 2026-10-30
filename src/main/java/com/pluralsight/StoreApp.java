@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Search Inventory
@@ -15,6 +17,9 @@ public class StoreApp {
 
         // Get the full product list from getInventory()
         ArrayList<Product> products = getInventory();
+
+        // Sort the products A to Z by name.
+        Collections.sort(products, Comparator.comparing(Product::getName));
 
         System.out.println("Products in inventory:");
 
